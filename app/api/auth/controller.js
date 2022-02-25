@@ -1,5 +1,6 @@
 const { User } = require("../../../db/models");
 const bcrypt = require("bcryptjs");
+const config = require("../../../config");
 const jwt = require("jsonwebtoken");
 
 module.exports = {
@@ -10,7 +11,19 @@ module.exports = {
       if (checkUser) {
         const checkPassword = bcrypt.compareSync(password, checkUser.password);
         if (checkPassword) {
-          res.status(200).json({ message: "Sukses Sign In!" });
+          const token = jwt.sign(
+            {
+              user: {
+                id: checkUser.id,
+                name: checkUser.name,
+                email: checkUser.email,
+              },
+            },
+            config.jwtKey
+          );
+          res
+            .status(200)
+            .json({ message: "Successfully Signed In", data: { token } });
         } else {
           res.status(403).json({ message: "Invalid Password" });
         }
