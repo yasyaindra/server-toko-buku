@@ -1,0 +1,2 @@
+npx sequelize-cli model:generate --name User --attributes name:string,password:string,email:string,role:enum
+npx sequelize-cli model:generate --name Category --attributes name:string,user:integer
