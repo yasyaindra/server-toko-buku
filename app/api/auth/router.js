@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
-
+const { signin } = require("./controller");
 /* GET home page. */
-router.get("/auth", function (req, res) {
-  res.status(200).json({ message: "Auth Connected!" });
-});
+router.post("/auth/signin", signin);
 
 module.exports = router;
