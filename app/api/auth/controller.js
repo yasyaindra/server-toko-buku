@@ -7,7 +7,6 @@ module.exports = {
   signin: async (req, res, next) => {
     try {
       const { email, password } = req.body;
-      console.log(User);
       const checkUser = await User.findOne({ where: { email } });
       if (checkUser) {
         const checkPassword = bcrypt.compareSync(password, checkUser.password);

@@ -1,16 +1,17 @@
+const User = require("../../../db/models/user");
 const jwt = require("jsonwebtoken");
 const config = require("../../../config");
 
 // Middleware Sign In 13:06
 module.exports = {
-  auth: (req, res, next) => {
+  auth: async (req, res, next) => {
     try {
       const token = req.headers.authorization
-        ? req.headers.authorization.replace("Bearer :", "")
+        ? req.headers.authorization.replace("Bearer ", "")
         : null;
-
-      if (token) {
-        req.user = token.user;
+      const decoded = jwt.verify(token, config.jwtKey);
+      if (decoded) {
+        req.user = decoded.user;
         next();
       }
     } catch (error) {
