@@ -7,6 +7,7 @@ const session = require("express-session");
 const authRouter = require("./app/api/auth/router");
 const categoriesRouter = require("./app/api/categories/router");
 const booksRouter = require("./app/api/books/router");
+const uploadsRouter = require("./app/api/uploads/router");
 const URL = "/api/v1";
 
 const app = express();
@@ -31,5 +32,6 @@ app.get("/", (req, res) => {
 app.use(`${URL}`, authRouter);
 app.use(`${URL}`, categoriesRouter);
 app.use(`${URL}`, booksRouter);
+app.use(`${URL}`, uploadsRouter);
 
 module.exports = app;
