@@ -11,7 +11,7 @@ module.exports = {
 
       const transaction = await Transaction.create(
         {
-          invoice: `T=${Math.floor(100000 + Math.random() * 900000)}`,
+          invoice: `T-${Math.floor(100000 + Math.random() * 900000)}`,
           date: new Date(),
           name: req.user.name,
           user: user,

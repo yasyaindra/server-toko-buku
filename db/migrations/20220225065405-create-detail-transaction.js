@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       transaction: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       book: {
         type: Sequelize.INTEGER,
