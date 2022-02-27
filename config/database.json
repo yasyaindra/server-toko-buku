@@ -14,10 +14,12 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "db_toko_buku",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "qmrucsvxvfyxpu",
+    "password": "826d0533d6ed7312d986b196fa5716dbf25e102fe5bc2df44eb7b2b7cc82a16e",
+    "database": "d6mda48rfdgf08",
+    "host": "ec2-54-167-152-185.compute-1.amazonaws.com",
+    "port":5432,
+    "dialect": "postgres",
+    "dialectOptions":{"ssl":{"rejectUnauthorized":false}}
   }
 }
