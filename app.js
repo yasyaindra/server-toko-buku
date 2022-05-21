@@ -13,10 +13,9 @@ const transactionRouter = require("./app/api/transactions/router");
 const cors = require("cors");
 const URL = "/api/v1";
 
-app.user(cors());
-
 const app = express();
 
+app.use(cors());
 app.use(
   session({
     secret: "keyboard cat",

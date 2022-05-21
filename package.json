@@ -24,5 +24,17 @@
   },
   "devDependencies": {
     "sequelize-cli": "^6.4.1"
-  }
+  },
+  "description": "npx sequelize-cli model:generate --name User --attributes name:string,password:string,email:string,role:enum\r npx sequelize-cli model:generate --name Category --attributes name:string,user:integer",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasyaindra/server-toko-buku.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yasyaindra/server-toko-buku/issues"
+  },
+  "homepage": "https://github.com/yasyaindra/server-toko-buku#readme"
 }
