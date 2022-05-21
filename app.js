@@ -10,7 +10,10 @@ const booksRouter = require("./app/api/books/router");
 const uploadsRouter = require("./app/api/uploads/router");
 const checkoutRouter = require("./app/api/checkout/router");
 const transactionRouter = require("./app/api/transactions/router");
+const cors = require("cors");
 const URL = "/api/v1";
+
+app.user(cors());
 
 const app = express();
 
